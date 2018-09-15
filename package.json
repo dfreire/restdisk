@@ -1,0 +1,54 @@
+{
+  "name": "restdisk",
+  "version": "0.0.1",
+  "description": "A REST interface to the filesystem",
+  "main": "lib/index.js",
+  "repository": "git@github.com:dfreire/restdisk.git",
+  "author": "dfreire <dario.freire@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "flow-bin": "^0.81.0",
+    "flow-typed": "^2.5.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "flow_typed",
+      "lib"
+    ],
+    "testMatch": [
+      "**/?(*.)+(spec|test).js?(x)"
+    ]
+  },
+  "scripts": {
+    "flow-deps": "flow-typed install",
+    "flow-check": "flow check src/",
+    "lint": "eslint src/",
+    "clean": "rimraf coverage lib",
+    "test": "jest src/",
+    "compile": "babel src/ -d lib/",
+    "build": "yarn run lint && yarn run test && yarn run clean && yarn run compile",
+    "start-watch": "nodemon lib/index",
+    "start": "node lib/index",
+    "prepublish": "yarn run build"
+  }
+}

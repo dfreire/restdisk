@@ -1,0 +1,11 @@
+{
+  "extends": ["airbnb-base", "plugin:flowtype/recommended", "prettier"],
+  "plugins": ["flowtype", "prettier"],
+  "rules": {
+    "prettier/prettier": ["warn"]
+  },
+  "env": {
+    "node": true,
+    "jest": true
+  }
+}

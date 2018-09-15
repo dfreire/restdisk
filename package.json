@@ -44,9 +44,9 @@
     "flow-check": "flow check src/",
     "lint": "eslint src/",
     "clean": "rimraf coverage lib",
-    "test": "jest src/",
+    "test": "jest src/ --coverage",
     "compile": "babel src/ -d lib/",
-    "build": "yarn run lint && yarn run test && yarn run clean && yarn run compile",
+    "build": "yarn run clean && yarn run lint && yarn run test && yarn run compile",
     "start-watch": "nodemon lib/index",
     "start": "node lib/index",
     "prepublish": "yarn run build"
